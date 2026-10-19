@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+private_data/
+raw_data/
+*.parquet
+*.sqlite
+*.sqlite3
+*.db

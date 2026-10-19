@@ -1,0 +1,92 @@
+{
+  "project": "temporal-search-audit-demo",
+  "data_status": "synthetic_only",
+  "seed": 20261019,
+  "decision_horizon_days": 28,
+  "source_rows": {
+    "entities.csv": 32,
+    "aliases.csv": 40,
+    "search_snapshots.csv": 1101,
+    "crawl_snapshots.csv": 1152,
+    "backlink_snapshots.csv": 1152,
+    "ai_citation_snapshots.csv": 1152,
+    "outcomes.csv": 1152
+  },
+  "panel_rows": 267,
+  "panel_build_diagnostics": {
+    "late_source_rows_excluded": 653,
+    "unmapped_alias_rows": 0,
+    "incomplete_entity_decisions": 21,
+    "universe_future_event_rate": 0.5903,
+    "included_future_event_rate": 0.5993,
+    "excluded_future_event_rate": 0.4762
+  },
+  "leakage_audit": {
+    "legal_rows_by_cutoff_entity": 1138,
+    "naive_future_availability_violations": 440,
+    "examples": [
+      {
+        "entity_id": "ORG-000",
+        "decision_at": "2025-01-06T23:59:59Z",
+        "row_id": "ORG-000-W00"
+      },
+      {
+        "entity_id": "ORG-002",
+        "decision_at": "2025-01-06T23:59:59Z",
+        "row_id": "ORG-002-W00"
+      },
+      {
+        "entity_id": "ORG-005",
+        "decision_at": "2025-01-06T23:59:59Z",
+        "row_id": "ORG-005-W00"
+      },
+      {
+        "entity_id": "ORG-006",
+        "decision_at": "2025-01-06T23:59:59Z",
+        "row_id": "ORG-006-W00"
+      },
+      {
+        "entity_id": "ORG-010",
+        "decision_at": "2025-01-06T23:59:59Z",
+        "row_id": "ORG-010-W00"
+      }
+    ]
+  },
+  "temporal_validation": {
+    "test_boundary": "2025-05-26T23:59:59Z",
+    "train_rows": 107,
+    "test_rows": 128,
+    "train_cutoff_start": "2025-01-06T23:59:59Z",
+    "train_cutoff_end": "2025-03-31T23:59:59Z",
+    "test_cutoff_start": "2025-05-26T23:59:59Z",
+    "test_cutoff_end": "2025-08-18T23:59:59Z",
+    "purge_gap_days": 28,
+    "test_positive_rate": 0.6094,
+    "roc_auc": 0.6718,
+    "average_precision": 0.7764,
+    "brier_score": 0.2288,
+    "coefficients_standardized": {
+      "visibility": 1.1573,
+      "content_quality": 0.2701,
+      "referring_domains": 0.1091,
+      "ai_citations": -0.2814
+    },
+    "interpretation": "Synthetic demonstration only; these metrics are not evidence of predictive skill on real search or business data."
+  },
+  "selection_diagnostics": {
+    "entities_in_panel": 32,
+    "entity_decisions_excluded_for_missing_search_or_crawl": 21,
+    "high_visibility_entity_mean_event_rate": 0.7535,
+    "low_visibility_entity_mean_event_rate": 0.4479,
+    "high_minus_low_event_rate_difference": 0.3056,
+    "entity_cluster_bootstrap_95pct_ci": [
+      0.1779,
+      0.4384
+    ],
+    "bootstrap_resamples": 2000,
+    "warning": "Coverage depends partly on generated visibility. Compare the observed panel with the source universe before generalizing; do not interpret this synthetic gap causally.",
+    "universe_future_event_rate": 0.5903,
+    "included_future_event_rate": 0.5993,
+    "excluded_future_event_rate": 0.4762
+  }
+}

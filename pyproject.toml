@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "temporal-search-audit-demo"
+version = "0.1.0"
+description = "A synthetic demonstration of point-in-time joins and temporal validation for multi-source research data."
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "scikit-learn>=1.4"]
+
+[project.scripts]
+temporal-search-audit = "temporal_audit_demo:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["temporal_audit_demo"]
